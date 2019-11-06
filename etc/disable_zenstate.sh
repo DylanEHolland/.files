@@ -1,0 +1,1 @@
+sudo python $HOME/bin/zenstates.py --c6-disable;
