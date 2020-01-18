@@ -1,0 +1,12 @@
+SHELL="/bin/bash"
+HOME="/home/dylan"
+PATH="/bin:/usr/bin:$HOME/bin/bin"
+
+#0 18 * * * rsync -hvuarP /home/dylan/IndependenceProgramming/* /var/storage/biz/IndependenceProgramming/
+#18 17 * * 1,2,3,4,5 /home/dylan/bin/freyr.sh &> /home/dylan/freyr.log
+
+1 0 * * * rsync -e "ssh -p11038" -hvuazrP master@edgyquant.com:/srv/edgyquant/ /var/storage/int/Website/ &> /home/dylan/backup.log
+1 0 * * * rsync -hvuarP /home/dylan/WorkLedger/ indyprogramming:/home/dylan/WorkLedger;
+1 0 * * * rsync -hvuarP /home/dylan/src/business/Finance/ indyprogramming:/home/dylan/Finance/;
+1 0 * * * /bin/bash /home/dylan/.files/bin/update_linux_repo.sh
+
