@@ -4,6 +4,8 @@ install_javascript() {
 	else
 		echo "Node already installed";
 	fi;
+
+	sudo npm i -g node-fetch react reactstrap;
 }
 
 install_python() {
@@ -35,7 +37,14 @@ install_poetry() {
 	fi;
 }
 
-install_javascript;
-install_python;
-install_poetry;
-install_heroku;
+install_packages() {
+	sudo dnf install pandoc lynx firefox vim python3 python3-pip -y &&
+	sudo group install "Development Tools" -y;
+}
+
+sudo dnf update -y;
+install_packages;
+#install_javascript;
+#install_python;
+#install_poetry;
+#install_heroku;

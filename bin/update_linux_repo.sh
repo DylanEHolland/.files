@@ -1,5 +1,5 @@
 #!/bin/bash
 
-cd /home/dylan/src/linux;
+cd /home/dylan/Documents/source/linux;
 git pull origin master;
 cd -;
