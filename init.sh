@@ -1,6 +1,9 @@
+#!/bin/sh
+
 install_javascript() {
 	if ! [ node ]; then
-		sudo dnf install nodejs npm -y;
+		echo installing node
+		#sudo dnf install nodejs npm -y;
 	else
 		echo "Node already installed";
 	fi;
@@ -17,20 +20,20 @@ install_python() {
 }
 
 install_heroku() {
-	if ! [ -d $HOME/.heroku ]; then
+	if ! [ -d "$HOME"/.heroku ]; then
 		OLDEST_DIR=$PWD;
 		cd /tmp &&
 		wget -c https://cli-assets.heroku.com/heroku-linux-x64.tar.xz &&
 		tar xvf heroku-linux-x64.tar.xz &&
-		mv heroku $HOME/.heroku;
-		cd $OLDEST_DIR;
+		mv heroku "$HOME/.heroku";
+		cd "$OLDEST_DIR" || exit;
 	else
 		echo "Heroku already installed";
 	fi;
 }
 
 install_poetry() {
-	if ! [ -d $HOME/.poetry ]; then
+	if ! [ -d "$HOME"/.poetry ]; then
 		curl -sSL https://raw.githubusercontent.com/sdispater/poetry/master/get-poetry.py | python; # Poetry (python packager)
 	else
 		echo "Poetry already installed";
@@ -38,13 +41,13 @@ install_poetry() {
 }
 
 install_packages() {
-	sudo dnf install pandoc lynx firefox vim python3 python3-pip -y &&
-	sudo group install "Development Tools" -y;
+	sudo dnf install pandoc lynx firefox vim python3 python3-pip markdown -y &&
+	sudo dnf group install "Development Tools" -y;
 }
 
-sudo dnf update -y;
+#sudo dnf update -y;
 install_packages;
-#install_javascript;
+install_javascript;
 #install_python;
 #install_poetry;
 #install_heroku;
