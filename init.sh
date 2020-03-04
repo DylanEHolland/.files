@@ -1,5 +1,9 @@
 #!/bin/sh
 
+install_snap() {
+	ls /snap;
+}
+
 install_javascript() {
 	if ! [ node ]; then
 		echo installing node
