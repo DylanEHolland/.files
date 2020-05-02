@@ -2,10 +2,6 @@
 export PKG_MGR="dnf";
 export ESCALATE="sudo";
 
-install_snap() {
-	ls /snap;
-}
-
 install_javascript() {
 	if ! [ node ]; then
 		echo installing node
@@ -55,8 +51,8 @@ install_docker() {
 }
 
 install_packages() {
-	sudo dnf install pandoc lynx firefox vim python3 python3-pip markdown -y &&
-	sudo dnf group install "Development Tools" -y;
+	$ESCALATE $PKG_MGR install pandoc lynx firefox vim python3 python3-pip markdown nmap -y &&
+	$ESCALATE $PKG_MGR group install "Development Tools" -y;
 }
 
 #sudo dnf update -y;
@@ -65,4 +61,4 @@ install_packages() {
 #install_python;
 #install_poetry;
 #install_heroku;
-install_docker;
+#install_docker;
