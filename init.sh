@@ -55,8 +55,8 @@ install_packages() {
 	$ESCALATE $PKG_MGR group install "Development Tools" -y;
 }
 
-#sudo dnf update -y;
-#install_packages;
+sudo dnf update -y;
+install_packages;
 #install_javascript;
 #install_python;
 #install_poetry;

@@ -1,5 +1,5 @@
 export PYREPO="https://github.com/python/cpython";
-export BRANCH="3.8";
+export BRANCH="3.6";
 export DEPTH="1";
 
 clone_repo() {
@@ -10,6 +10,6 @@ echo "Creating source directory...";
 clone_repo &&
 mkdir /tmp/build &&
 cd /tmp/build &&
-/tmp/python/configure --prefix=/tmp/pybuild &&
+/tmp/python/configure --prefix=$HOME/.pythonbuild &&
 make -j12 &&
 make install
