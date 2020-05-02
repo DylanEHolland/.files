@@ -2,8 +2,5 @@ SHELL="/bin/bash"
 HOME="/home/dylan"
 PATH="/bin:/usr/bin:$HOME/bin/bin"
 
-1 0 * * * rsync -e "ssh -p11038" -hvuazrP master@edgyquant.com:/srv/edgyquant/ /var/storage/int/Website/ &> /home/dylan/backup.log
-1 0 * * * rsync -hvuarP /home/dylan/WorkLedger/ indyprogramming:/home/dylan/WorkLedger;
-1 0 * * * rsync -hvuarP /home/dylan/src/business/Finance/ indyprogramming:/home/dylan/Finance/;
 1 0 * * * /bin/bash /home/dylan/.files/bin/update_linux_repo.sh &> /home/dylan/linux-git.log;
 

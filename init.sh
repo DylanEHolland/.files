@@ -1,4 +1,6 @@
 #!/bin/sh
+export PKG_MGR="dnf";
+export ESCALATE="sudo";
 
 install_snap() {
 	ls /snap;
@@ -44,14 +46,23 @@ install_poetry() {
 	fi;
 }
 
+install_docker() {
+	sudo dnf install dnf-plugins-core -y;
+	sudo dnf config-manager --add-repo "https://download.docker.com/linux/fedora/docker-ce.repo";
+	$ESCALATE $PKG_MGR install docker-ce docker-ce-cli containerd.io -y;
+	$ESCALATE systemctl enable --now docker;
+	$ESCALATE groupadd docker;
+}
+
 install_packages() {
 	sudo dnf install pandoc lynx firefox vim python3 python3-pip markdown -y &&
 	sudo dnf group install "Development Tools" -y;
 }
 
 #sudo dnf update -y;
-install_packages;
-install_javascript;
+#install_packages;
+#install_javascript;
 #install_python;
 #install_poetry;
 #install_heroku;
+install_docker;

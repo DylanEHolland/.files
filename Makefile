@@ -2,4 +2,5 @@ all:
 	@-echo make install;
 
 install:
-	@-cp bashrc.sh ~/.bashrc;
+	@-cp -v bashrc.sh ~/.bashrc;
+	@-cp -v gitconfig.sh ~/.gitconfig;
