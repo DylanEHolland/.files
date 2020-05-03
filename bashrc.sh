@@ -1,6 +1,7 @@
 #!/usr/bin/env sh
 
 source /etc/bashrc; # import system settings
+source /etc/profile.d/bash_completion.sh;
 
 # Load our dotfiles
 for dot_file in $HOME/.files/{aliases,exports}.sh `ls $HOME/.files/etc/*`; 
