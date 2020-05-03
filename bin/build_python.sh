@@ -1,15 +1,42 @@
-export PYREPO="https://github.com/python/cpython";
-export BRANCH="3.6";
-export DEPTH="1";
+#!/bin/bash
 
 clone_repo() {
-    git clone $PYREPO --branch $BRANCH /tmp/python --depth 1;
+    if [ -d $LOCAL_PYTHON_SRC_DIRECTORY ]; then
+        rm -rfv $LOCAL_PYTHON_SRC_DIRECTORY || return 1
+    fi;
+
+    git clone $PYREPO \
+        $LOCAL_PYTHON_SRC_DIRECTORY \
+        --branch $LOCAL_PYTHON_VERSION  \
+        --depth 1 || return 1
 }
 
-echo "Creating source directory...";
-clone_repo &&
-mkdir /tmp/build &&
-cd /tmp/build &&
-/tmp/python/configure --prefix=$HOME/.pythonbuild &&
-make -j12 &&
-make install
+create_build_dir() {
+    if [ -d $LOCAL_PYTHON_BUILD_DIRECTORY ]; then
+        rm -rfv $LOCAL_PYTHON_BUILD_DIRECTORY || return 1
+    fi;
+}
+
+configure_build() {
+    if create_build_dir; then
+        $LOCAL_PYTHON_SRC_DIRECTORY/configure \
+            --prefix=$LOCAL_PYTHON_DIRECTORY || return 1;
+    fi;
+}
+
+build_from_source() {
+    if configure_build; then
+        make -j12 && make install || return 1;
+    fi;
+}
+
+if clone_repo; then
+    cd $LOCAL_PYTHON_BUILD_DIRECTORY;
+    if build_from_source; then
+        export PATH="$LOCAL_PYTHON_DIRECTORY:$PATH";
+        cd -;
+        rm -rf $LOCAL_PYTHON_BUILD_DIRECTORY;
+        pip install --upgrade pip;
+        which pip;
+    fi;
+fi;

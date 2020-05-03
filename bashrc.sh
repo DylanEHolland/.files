@@ -11,4 +11,6 @@ done;
 
 # Load the API keys we don't want being open source (Tiingo, Tenquant, Reddit, etc)
 #source $HOME/.api_keys.sh
-source ~/.environment/bin/activate; # use our local python environment
+if [ -d $LOCAL_PYTHON_ENV_DIR ]; then
+    source $LOCAL_PYTHON_ENV_DIR/bin/activate; # use our local python environment
+fi;
