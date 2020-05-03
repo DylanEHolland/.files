@@ -1,3 +1,3 @@
 [user]
 	name = DylanEHolland
-	email = dylan@trustedfor.com
+	email = salinson1138@gmail.com
