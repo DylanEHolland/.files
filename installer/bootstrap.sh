@@ -2,7 +2,7 @@
 #   Bootstrap a fedora-based system
 
 ROOT_FS="/tmp/chroot";
-PKG="dnf";
+PKG="dnf -y";
 OUTPUT_CENTOS_RELEASE="centos-release.x86_64";
 
 create_root_fs() {
@@ -18,7 +18,7 @@ create_root_fs() {
 if create_root_fs; then
     rpm --root=$ROOT_FS --initdb;
     $PKG --installroot=$ROOT_FS --releasever=/ update;
-    $PKG --installroot=$ROOT_FS --releasever=/ $OUTPUT_CENTOS_RELEASE;
+    $PKG --installroot=$ROOT_FS --releasever=/ install $OUTPUT_CENTOS_RELEASE;
 else
     echo "Something went wrong";
 fi;
