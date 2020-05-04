@@ -6,6 +6,7 @@ export LOCAL_PYTHON_VERSION="3.7";
 export LOCAL_PYTHON_DIRECTORY="$HOME/.pythonbuild";
 export LOCAL_PYTHON_SRC_DIRECTORY="/tmp/python-$LOCAL_PYTHON_VERSION";
 export LOCAL_PYTHON_BUILD_DIRECTORY="/tmp/build";
+export MAKEOPTS="-j12";
 
 PATH="$HOME/.files/bin:$HOME/.pythonbuild/bin:$HOME/bin";
 PATH="$PATH:/bin:/usr/bin";

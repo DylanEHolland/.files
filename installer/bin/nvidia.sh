@@ -19,7 +19,7 @@ setup_cuda() {
 
 setup_x_window() {
 	dnf groupinstall "X Window System" -y;
-	dnf install openbox xfce4-{session,notifyd,mixer,settings,taskmanager,{notes,datetime,whiskermenu,mount}-plugin,panel,terminal} gnome-{terminal,session} -y;
+	dnf install openbox xfce4-{session,notifyd,mixer,settings,taskmanager,{notes,datetime,whiskermenu,mount}-plugin,panel,terminal} gnome-{terminal,session} numix-icon-theme-circle numix-gtk-theme -y;
 }
 
 setup_x_window;
