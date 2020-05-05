@@ -1,6 +1,5 @@
 SHELL="/bin/bash"
 HOME="/home/dylan"
-PATH="/bin:/usr/bin:$HOME/bin/bin"
+PATH="$HOME/.files/bin:$HOME/bin:$HOME/.local/bin:$HOME/.pythonbuild/bin:/bin:/usr/bin:$HOME/bin/bin"
 
-1 0 * * * /bin/bash /home/dylan/.files/bin/update_linux_repo.sh &> /home/dylan/linux-git.log;
-
+@reboot /bin/sleep 10 && /bin/bash $HOME/.files/bin/startup-x.sh

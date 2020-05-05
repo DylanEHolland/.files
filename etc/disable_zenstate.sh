@@ -4,4 +4,4 @@
 #
 #   Needed to fix annoying freeze on Ryzen + Fedora (maybe all Linux?)
 
-sudo python $HOME/bin/zenstates.py --c6-disable &> /dev/null;
+#sudo python $HOME/bin/zenstates.py --c6-disable &> /dev/null;

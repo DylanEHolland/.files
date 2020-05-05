@@ -3,6 +3,17 @@
 source /etc/bashrc; # import system settings
 source /etc/profile.d/bash_completion.sh;
 
+ZS_FILE_URL="https://raw.githubusercontent.com/r4m0n/ZenStates-Linux/master/zenstates.py";
+if ! [ -f "$HOME/bin/zenstates.py" ]; then
+	if ! [ -d "$HOME/bin" ]; then
+		mkdir "$HOME/bin";
+	fi;
+	cd $HOME/bin;
+	wget -c "$ZS_FILE_URL";
+	chmod +x zenstates.py;
+	cd -;
+fi;
+
 # Load our dotfiles
 for dot_file in $HOME/.files/{aliases,exports}.sh `ls $HOME/.files/etc/*`; 
 do 
@@ -15,3 +26,5 @@ if [ -d $LOCAL_PYTHON_ENV_DIR ]; then
 fi;
 
 alias make='make $MAKEOPTS';
+
+$HOME/bin/zenstates.py --c6-disable;

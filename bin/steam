@@ -1,0 +1,3 @@
+#!/bin/bash
+
+nohup flatpak run com.valvesoftware.Steam &> /tmp/steam &
