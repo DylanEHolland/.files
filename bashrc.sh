@@ -26,5 +26,3 @@ if [ -d $LOCAL_PYTHON_ENV_DIR ]; then
 fi;
 
 alias make='make $MAKEOPTS';
-
-$HOME/bin/zenstates.py --c6-disable;
