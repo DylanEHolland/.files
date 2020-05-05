@@ -7,3 +7,4 @@ dnf -y install code;
 dnf -y install android-tools;
 dnf -y install dnf install -y google-droid-sans-fonts google-droid-serif-fonts google-droid-sans-mono-fonts;
 dnf -y install xcompmgr;
+flatpak install flathub com.slack.Slack;
