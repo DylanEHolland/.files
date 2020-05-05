@@ -1,11 +1,18 @@
+SCRIPTS=./bin/* ./builder/programs/* ./installer/{*.sh,bin/*}
+
 all:
 	@-echo make install;
 
-install:
+install: executable
 	@-cp -v bashrc.sh ~/.bashrc;
 	@-cp -v gitconfig.sh ~/.gitconfig;
 	@-cp -v gitconfig-job.sh ~/.gitconfig-job;
-	@-chmod +x bin/*.sh;
 
 push:
 	@-chmod -x bin/*.sh;
+
+executable:
+	@-chmod +x $(SCRIPTS);
+
+unexecutable:
+	@-chmod -x $(SCRIPTS);
