@@ -1,6 +1,8 @@
 #!/usr/bin/env sh
 
-source /etc/bashrc; # import system settings
+if [ -f "/etc/bashrc" ]; then
+	source /etc/bashrc; # import system settings
+fi;
 source /etc/profile.d/bash_completion.sh;
 
 ZS_FILE_URL="https://raw.githubusercontent.com/r4m0n/ZenStates-Linux/master/zenstates.py";

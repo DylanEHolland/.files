@@ -55,7 +55,13 @@ install_packages() {
 	$ESCALATE $PKG_MGR group install "Development Tools" -y;
 }
 
-sudo dnf update -y;
+$ESCALATE  $PKG_MGR update -y;
+$ESCALATE  $PKG_MGR install epel-release -y;
+$ESCALATE  $PKG_MGR install --nogpgcheck https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm -y;
+$ESCALATE  $PKG_MGR install --nogpgcheck https://download1.rpmfusion.org/free/el/rpmfusion-free-release-8.noarch.rpm https://download1.rpmfusion.org/nonfree/el/rpmfusion-nonfree-release-8.noarch.rpm -y;
+$ESCALATE $PKG_MGR config-manager --enable PowerTools;
+
+
 install_packages;
 #install_javascript;
 #install_python;
