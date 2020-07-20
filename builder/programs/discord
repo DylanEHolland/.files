@@ -1,3 +1,0 @@
-#!/bin/bash
-
-nohup flatpak run com.discordapp.Discord --socket=fallback-x11 --socket=pulseaudio --device=dri &> /tmp/discord &

@@ -1,4 +1,4 @@
-SCRIPTS=./bin/* ./builder/programs/* ./installer/{*.sh,bin/*}
+SCRIPTS=./bin/*
 
 all:
 	@-echo make install;

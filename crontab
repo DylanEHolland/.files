@@ -1,5 +1,0 @@
-SHELL="/bin/bash"
-HOME="/home/dylan"
-PATH="$HOME/.files/bin:$HOME/bin:$HOME/.local/bin:$HOME/.pythonbuild/bin:/bin:/usr/bin:$HOME/bin/bin"
-
-@reboot /bin/sleep 10 && /bin/bash $HOME/.files/bin/startup-x.sh

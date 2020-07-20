@@ -17,7 +17,7 @@ if ! [ -f "$HOME/bin/zenstates.py" ]; then
 fi;
 
 # Load our dotfiles
-for dot_file in $HOME/.files/{aliases,exports}.sh `ls $HOME/.files/etc/*`; 
+for dot_file in $HOME/.files/{aliases,exports}.sh; 
 do 
     source $dot_file; 
 done;
