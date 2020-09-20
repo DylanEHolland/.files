@@ -29,5 +29,5 @@ if [ -d $LOCAL_PYTHON_ENV_DIR ]; then
 fi;
 
 source $HOME/.nix-profile/etc/profile.d/nix.sh;
-export PATH="$HOME/environment:$PATH";
+export PATH="$HOME/environment/bin:$PATH";
 alias make='make $MAKEOPTS';
