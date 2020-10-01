@@ -4,7 +4,6 @@ if [ -f "/etc/bashrc" ]; then
 	source /etc/bashrc; # import system settings
 fi;
 source /etc/profile.d/bash_completion.sh;
-#source $HOME/.nix-profile/etc/profile.d/nix.sh;
 
 ZS_FILE_URL="https://raw.githubusercontent.com/r4m0n/ZenStates-Linux/master/zenstates.py";
 if ! [ -f "$HOME/bin/zenstates.py" ]; then
@@ -27,7 +26,3 @@ done;
 if [ -d $LOCAL_PYTHON_ENV_DIR ]; then
     source $LOCAL_PYTHON_ENV_DIR/bin/activate; # use our local python environment
 fi;
-
-source $HOME/.nix-profile/etc/profile.d/nix.sh;
-export PATH="$HOME/environment/bin:$PATH";
-alias make='make $MAKEOPTS';
