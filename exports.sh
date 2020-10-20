@@ -8,7 +8,8 @@ export LOCAL_PYTHON_SRC_DIRECTORY="/tmp/python-$LOCAL_PYTHON_VERSION";
 export LOCAL_PYTHON_BUILD_DIRECTORY="/tmp/build";
 export MAKEOPTS="-j12";
 
-PATH="$HOME/.files/bin:$HOME/pykgr/builder/bin:/snap/bin:$HOME/bin:$HOME/.heroku/bin";
+PATH="$HOME/.files/bin:$HOME/pykgr/bin:$HOME/pykgr/builder/bin";
+PATH="$PATH:/snap/bin:$HOME/bin:$HOME/.heroku/bin";
 PATH="$PATH:/bin:/usr/bin:/sbin";
 PATH="$PATH:/usr/games";
 
