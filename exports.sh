@@ -1,17 +1,10 @@
 #!/usr/bin/env sh
 
-export PYREPO="https://github.com/python/cpython";
-export LOCAL_PYTHON_ENV_DIR="$HOME/.environ";
-export LOCAL_PYTHON_VERSION="3.7";
-export LOCAL_PYTHON_DIRECTORY="$HOME/.pythonbuild";
-export LOCAL_PYTHON_SRC_DIRECTORY="/tmp/python-$LOCAL_PYTHON_VERSION";
-export LOCAL_PYTHON_BUILD_DIRECTORY="/tmp/build";
-export MAKEOPTS="-j12";
-
-PATH="$HOME/.files/bin:$HOME/pykgr/bin:$HOME/pykgr/builder/bin";
-PATH="$PATH:/snap/bin:$HOME/bin:$HOME/.heroku/bin";
+PATH="$HOME/.files/bin";
+PATH="$HOME/pykgr/builder/bin:$HOME/pykgr/library/bin:$PATH";
+PATH="$PATH:$HOME/bin:$HOME/.heroku/bin";
+PATH="$PATH:/snap/bin:/usr/games";
 PATH="$PATH:/bin:/usr/bin:/sbin";
-PATH="$PATH:/usr/games";
 
 export PATH;
 
