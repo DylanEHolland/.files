@@ -1,6 +1,7 @@
 #!/usr/bin/env sh
 
 PATH="$HOME/.files/bin";
+PATH="$HOME/.pybuild/bin:$PATH";
 PATH="$HOME/pykgr/builder/bin:$HOME/pykgr/library/bin:$PATH";
 PATH="$PATH:$HOME/bin:$HOME/.heroku/bin";
 PATH="$PATH:/snap/bin:/usr/games";

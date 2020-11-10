@@ -14,6 +14,7 @@ if ! [ -f "$HOME/bin/zenstates.py" ]; then
 	wget -c "$ZS_FILE_URL";
 	chmod +x zenstates.py;
 	cd -;
+A
 fi;
 
 # Load our dotfiles
