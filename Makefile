@@ -8,6 +8,7 @@ install: executable
 	@-cp -v gitconfig.sh ~/.gitconfig;
 	@-cp -v gitconfig-job.sh ~/.gitconfig-job;
 	@-cp -v vimrc ~/.vimrc;
+	@-sh code-font.sh;
 
 push:
 	@-chmod -x bin/*.sh;
