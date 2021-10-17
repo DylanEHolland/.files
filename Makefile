@@ -5,6 +5,7 @@ all:
 
 install: executable
 	@-cp -v bashrc.sh ~/.bashrc;
+	@-cp -v zshrc.sh ~/.zshrc;
 	@-cp -v gitconfig.sh ~/.gitconfig;
 	@-cp -v gitconfig-job.sh ~/.gitconfig-job;
 	@-cp -v vimrc ~/.vimrc;
