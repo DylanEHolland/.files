@@ -11,7 +11,7 @@ install: executable
 	@-cp -v vimrc ~/.vimrc;
 
 	@if [ "$(BASE_SYSTEM)" = "Linux" ]; then cp -v gitconfig-job.sh ~/.gitconfig-job; fi;
-	#@if [ "$(BASE_SYSTEM)" = "Linux" ]; then sh code-font.sh; fi;
+	@if [ "$(BASE_SYSTEM)" = "Linux" ]; then sh code-font.sh; fi;
 
 push:
 	@-chmod -x bin/*.sh;
