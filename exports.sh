@@ -12,8 +12,13 @@ if [ `uname` = "Linux" ]; then
     export PATH="/usr/local/cuda-10.0/bin:/usr/local/cuda/bin:$PATH:/home/dylan/.local/bin:/snap/bin";
     export LD_LIBRARY_PATH="/usr/local/cuda/lib64:/usr/local/cuda-10.0/lib64";
     export PROTON_ENABLE_NVAPI=1
+else
+    # MacOS 
+    export PATH="$PATH:/opt/homebrew/bin";
 fi;
 
 if [ "$SHELL_NAME" = "bash" ]; then
     export PS1="\[\e[0;32m\][\[\e[0m\]\u@\[\033[01;31m\]\h \[\033[01;34m\]\w\[\e[0;32m\]]\[\e[0m\]$ ";
 fi;
+
+source ~/.nvm/nvm.sh;
