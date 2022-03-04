@@ -3,7 +3,7 @@ rm -rfv binutils* gcc* build-* build;
 wget -c https://ftp.gnu.org/gnu/gcc/gcc-11.2.0/gcc-11.2.0.tar.xz;
 wget -c https://ftp.gnu.org/gnu/binutils/binutils-2.38.tar.xz;
 
-export TARGET="i686-elf";
+export TARGET="aarch64-elf";
 export PREFIX="$HOME/opt/cross";
 export PATH="$PREFIX/bin:$PATH";
 
