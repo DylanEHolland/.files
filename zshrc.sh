@@ -114,3 +114,5 @@ unsetopt share_history;
 __git_files () { 
     _wanted files expl 'local files' _files     
 }
+
+source ~/.files/exports.sh;
