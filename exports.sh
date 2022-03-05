@@ -15,6 +15,14 @@ if [ `uname` = "Linux" ]; then
 else
     # MacOS 
     export PATH="$PATH:/opt/homebrew/bin";
+    export PATH="/opt/homebrew/opt/llvm/bin:$PATH";
+
+    ## LLVM
+    export LDFLAGS="-L/opt/homebrew/opt/llvm/lib";
+    export CPPFLAGS="-I/opt/homebrew/opt/llvm/include";
+
+    ## Haskell
+    [ -f "/Users/dylanholland/.ghcup/env" ] && source "/Users/dylanholland/.ghcup/env"
 fi;
 
 if [ "$SHELL_NAME" = "bash" ]; then
