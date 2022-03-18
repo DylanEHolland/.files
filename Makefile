@@ -5,13 +5,12 @@ all:
 	@-echo make install;
 
 install: executable
-	@-cp -v bashrc.sh ~/.bashrc;
-	@-cp -v zshrc.sh ~/.zshrc;
-	@-cp -v gitconfig.sh ~/.gitconfig;
-	@-cp -v vimrc ~/.vimrc;
+	@-cp -v sh/bashrc.sh ~/.bashrc;
+	@-cp -v sh/zshrc.sh ~/.zshrc;
+	@-cp -v sh/vimrc ~/.vimrc;
 
-	@if [ "$(BASE_SYSTEM)" = "Linux" ]; then cp -v gitconfig-job.sh ~/.gitconfig-job; fi;
-	@if [ "$(BASE_SYSTEM)" = "Linux" ]; then sh code-font.sh; fi;
+	@-sh bin/install-code-font.sh;
+	@-sh bin/init.sh;
 
 push:
 	@-chmod -x bin/*.sh;

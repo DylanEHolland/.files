@@ -27,4 +27,4 @@ __git_files () {
     _wanted files expl 'local files' _files     
 }
 
-source ~/.files/exports.sh;
+source ~/.files/sh/exports.sh;
