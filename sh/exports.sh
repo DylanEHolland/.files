@@ -24,3 +24,4 @@ if [ "$SHELL_NAME" = "bash" ]; then
 fi;
 
 [ -d ~/.nvm ] && source ~/.nvm/nvm.sh;
+source $HOME/.cargo/env;
